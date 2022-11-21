@@ -1,5 +1,6 @@
 package com.th.restTemplete.config;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.boot.web.client.RootUriTemplateHandler;
@@ -13,7 +14,7 @@ import lombok.Setter;
 @Configuration
 @ConfigurationProperties(prefix = "rest-service")
 public class RestTemplateConfig {
-
+	@Value("${host}")
 	private String host;
 	
 	@Bean
